@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </nav>
+    <h1>Welcome to our video sharing platform</h1>
+    <form action="/" method="GET">
+      <input type="text" name="search" placeholder="Search for a video...">
+      <button type="submit">Search</button>
+    </form>
+    <div>
+      <h2>Video 1</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JMWFS26v9fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div>
+      <h2>Video 2</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JMWFS26v9fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div>
+      <h2>Video 3</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JMWFS26v9fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div>
+      <h2>Video 4</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JMWFS26v9fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {{#if videos}}
+     <ul>
+  {{#each videos}}
+    <li>
+      <img src="{{thumbnail}}" alt="{{title}}">
+      <h2>{{title}}</h2>
+      <p>Channel: {{channel}}</p>
+      <p>Upload date: {{uploadDate}}</p>
+    </li>
+  {{/each}}
+</ul>
+
+    {{else}}
+      <p>No videos available</p>
+    {{/if}}
+  </body>
+</html>
