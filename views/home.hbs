@@ -12,25 +12,25 @@
       </ul>
     </nav>
     <h1>Welcome to our video sharing platform</h1>
-    <form action="/search" method="GET">
-      <input type="text" name="search" placeholder="Search for a video...">
-      <button type="submit">Search</button>
-    </form>
-    {{#if videos}}
-      <ul>
-        {{#each videos}}
-          <li>
-            <img src="{{image}}" alt="{{title}}">
-            <h2>{{title}}</h2>
-            <p>Channel: {{channel}}</p>
-            <p>Likes: {{likes}}</p>
-            <p>Upload date: {{uploadDate}}</p>
-            <a href="/video/{{videoId}}">View details</a>
-          </li>
-        {{/each}}
-      </ul>
-    {{else}}
-      <p>No videos available</p>
-    {{/if}}
+    
+   <!-- Search bar -->
+<form action="/" method="GET">
+  <input type="text" name="search" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
+
+<!-- Video list -->
+{{#each videos}}
+  <div class="video">
+    <a href="/video/{{this.videoId}}">
+      <img src="{{this.img}}" alt="{{this.title}}">
+      <h2>{{this.title}}</h2>
+      <p>{{this.channel}}</p>
+      <p>{{this.createdDate}}</p>
+    </a>
+  </div>
+{{/each}}
+
+
   </body>
 </html>

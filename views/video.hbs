@@ -11,42 +11,20 @@
         <li><a href="/admin">Admin</a></li>
       </ul>
     </nav>
-      
-      <div class="video-details">
-  <div class="video-player">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video.videoId}}"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+     <!-- views/video.hbs -->
+
+<!-- Main section -->
+{{#each videos}}
+  <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{this.videoId}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>{{this.title}}</h3>
+    <p>Channel: {{this.channel}}</p>
+    <p>Likes: {{this.likes}}</p>
+    <p>Created Date: {{this.createdDate}}</p>
   </div>
+{{/each}}
 
-  <div class="video-info">
-    <h2>{{video.title}}</h2>
-    <h4>Channel: {{video.channel}}</h4>
-    <p>Uploaded on {{video.uploadDate}}</p>
-    <p>{{video.likes}} likes</p>
-    
-    <form action="/video/{{video.videoId}}/like" method="POST">
-      <button type="submit" class="like-btn">Like</button>
-    </form>
 
-    <form action="/video/{{video.videoId}}/comment" method="POST">
-      <label for="comment">Add a comment:</label><br>
-      <textarea name="comment" id="comment" cols="30" rows="5"></textarea><br>
-      <button type="submit">Submit</button>
-    </form>
-
-    <div class="video-comments">
-      <h4>Comments:</h4>
-      <ul>
-        {{#each comments}}
-          <li>{{this}}</li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-</div>
 
     </body>
 

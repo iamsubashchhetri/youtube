@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 const videoSchema = new mongoose.Schema({
   videoId: {
-    type: String,
+    type: Number,
     required: true,
     unique: true
   },
@@ -38,6 +38,7 @@ const videoSchema = new mongoose.Schema({
 const Video = mongoose.model('Video', videoSchema);
 
 module.exports = Video;
+
 
 
 
