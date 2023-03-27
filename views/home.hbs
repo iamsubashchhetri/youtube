@@ -18,19 +18,22 @@
   <input type="text" name="search" placeholder="Search...">
   <button type="submit">Search</button>
 </form>
-
-<!-- Video list -->
-{{#each videos}}
-  <div class="video">
-    <a href="/video/{{this.videoId}}">
-      <img src="{{this.img}}" alt="{{this.title}}">
-      <h2>{{this.title}}</h2>
-      <p>{{this.channel}}</p>
-      <p>{{this.createdDate}}</p>
-    </a>
-  </div>
-{{/each}}
-
+<h1>Home Page</h1>
+<form method="GET">
+  <input type="text" name="search" placeholder="Search videos...">
+  <button type="submit">Search</button>
+</form>
+<hr>
+{{!-- {{#each videos}}
+<div>
+  <a href="/video/{{videoId}}">
+    <img src="{{img}}" alt="{{title}}">
+    <h2>{{title}}</h2>
+  </a>
+  <p>Channel: {{channel}}</p>
+  <p>Upload Date: {{createdDate}}</p>
+</div>
+{{/each}} --}}
 
   </body>
 </html>
