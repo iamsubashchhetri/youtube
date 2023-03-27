@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
     <nav>
@@ -11,26 +13,98 @@
         <li><a href="/admin">Admin</a></li>
       </ul>
     </nav>
-    <h1>Welcome to our video sharing platform</h1>
+    <h1>Mini Youtube</h1>
     <form action="/" method="GET">
       <input type="text" name="search" placeholder="Search for a video...">
-      <button type="submit">Search</button>
+      <button type="button">Search</button>
     </form>
-    
-    {{#if videos}}
-     <ul>
-  {{#each videos}}
-    <li>
-      <img src="{{thumbnail}}" alt="{{title}}">
-      <h2>{{title}}</h2>
-      <p>Channel: {{channel}}</p>
-      <p>Upload date: {{uploadDate}}</p>
-    </li>
-  {{/each}}
-</ul>
+    <div class="videos">
+      <ul>
+        <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ryljIay9gP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="1">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="1">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+        <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/MArLl3XbN8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="2">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="2">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+        <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/LnQI6W5NYAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+       <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/LnQI6W5NYAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+        <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/usSZdwl5Fvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+        <li>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PhF2W0fkgu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-actions">
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <button type="button">Like</button>
+            </form>
+            <form action="/" method="POST">
+              <input type="hidden" name="videoId" value="3">
+              <input type="text" name="comment" placeholder="Add a comment...">
+              <button type="button">Comment</button>
+            </form>
+          </div>
+        </li>
+        </div>
 
-    {{else}}
-      <p>No videos available</p>
-    {{/if}}
   </body>
 </html>

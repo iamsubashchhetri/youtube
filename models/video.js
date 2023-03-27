@@ -1,17 +1,9 @@
-// const express = require('express');
-// const router = express.Router();
-// const Video = require('../models/video');
-
-
-// Subash Cretaed Neupane
-
 const mongoose = require('mongoose');
 
 const videoSchema = new mongoose.Schema({
   videoId: {
-    type: Number,
-    required: true,
-    unique: true
+    type: String,
+    required: true
   },
   title: {
     type: String,
@@ -25,11 +17,11 @@ const videoSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  createdDate: {
-    type: Date,
-    default: Date.now
+  image: {
+    type: String,
+    required: true
   },
-  img: {
+  uploadDate: {
     type: String,
     required: true
   }
@@ -38,18 +30,3 @@ const videoSchema = new mongoose.Schema({
 const Video = mongoose.model('Video', videoSchema);
 
 module.exports = Video;
-
-
-
-
-
-// Video page route
-// router.get('/:id', (req, res) => {
-//   Video.findById(req.params.id)
-//     .then(video => {
-//       res.render('video', { video });
-//     })
-//     .catch(err => console.log(err));
-// });
-
-// module.exports = router;

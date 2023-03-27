@@ -1,0 +1,117 @@
+
+  body {
+    animation: color-change 10s infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @keyframes color-change {
+    0% {
+      background-color: rgb(209, 81, 81);
+    }
+    50% {
+      background-color: rgb(156, 156, 194);
+    }
+    100% {
+      background-color: rgb(136, 187, 136);
+    }
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #b03a3a;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header styles */
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Search form styles */
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #444;
+  }
+  
+  /* Video list styles */
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .videos ul {
+    list-style: none;
+    
+    /* update to nowrap */
+    justify-content: space-between;
+   /* ensure the ul element takes up full width */
+    /* enable horizontal scrolling */
+  }
+  
+  .videos li {
+    /* set width to 33.33% for three videos in a row */
+    margin-right: 10px;
+    margin-top: 4px;
+  }
+  
+  .videos li:last-child {
+    margin-right: 0;
+  }
+  

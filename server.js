@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const VideoModel = require("./models/video");
+const ModelVideo = require("./models/video");
 const Comment = require("./models/comment");
 dotenv.config();
 
@@ -53,25 +53,27 @@ mongoose
     console.log("I am not connected to database");
   });
 
-// Use routes
-// get all video
-app.get("/video", async (req, res) => {
-  try {
-    const videoall = await VideoModel.find();
 
-    if (!videoall.length) {
-      return res.status(404).send("no video");
-    }
-    return res.status(200).send(videoall);
-  } catch (err) {
-    return res.status(500).send(err);
-  }
+// app.get("/video", async (req, res) => {
+//   try {
+//     const videoall = await ModelVideo.find();
+
+//     if (!videoall.length) {
+//       return res.status(404).send("no video");
+//     }
+//     return res.status(200).send(videoall);
+//   } catch (err) {
+//     return res.status(500).send(err);
+//   }
+// });
+app.get('/video', (req, res) => {
+  res.render('video');
 });
 
 // get single video
 app.get("/video/:id", async (req, res) => {
   try {
-    const videolist = await VideoModel.find({
+    const videolist = await ModelVideo.find({
       videoId: req.params.id,
     });
    
@@ -86,7 +88,7 @@ app.get("/video/:id", async (req, res) => {
 
 app.post("/video", async (req, res) => {
   try {
-    const dataSave = new VideoModel(req.body);
+    const dataSave = new ModelVideo(req.body);
     await dataSave.save();
     return res.status(201).send("I am uploaded");
   } catch (err) {
@@ -94,11 +96,6 @@ app.post("/video", async (req, res) => {
     return res.status(404).send("Data is not successfully updated");
   }
 });
-
-
-
-
-
 
 
 
@@ -119,7 +116,7 @@ app.get("/videos/:id/comments", async (req, res) => {
 });
 app.get("/video/:id", async (req, res) => {
   try {
-    const video = await VideoModel.findOne({
+    const video = await ModelVideo.findOne({
       videoId: req.params.id,
     });
 
@@ -158,12 +155,11 @@ app.post("/videos/:id/comments", async (req, res) => {
 });
 
 
-
 app.get('/', (req, res) => {
   const searchKeyword = req.query.q;
 
   // Fetch all videos from the database
-  VideoModel.find({})
+  ModelVideo.find({})
     .then(videos => {
       let filteredVideos = videos;
 
@@ -186,28 +182,15 @@ app.get("/admin", (req, res) => {
 // app.get("/video", (req, res) => {
 //     res.render("video", {layout:false})
 // })
-app.get("/search", async (req, res) => {
-  const searchTerm = req.query.search;
-  try {
-    const videos = await VideoModel.find({
-      title: {
-        $regex: searchTerm,
-        $options: "i",
-      },
-    });
-    return res.render("home", {
-      videos: videos,
-    });
-  } catch (err) {
-    console.error(err);
-    return res.render("home", {
-      videos: null,
-    });
-  }
-});
 
 
+
+// Function to print server start message
+const onHttpStart = () => {
+  console.log("Server is starting");
+  console.log(`Listening to port ${HTTP_PORT}`);
+  console.log("Press control + C to stop");
+}
 
 // Start the server
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(HTTP_PORT, onHttpStart);

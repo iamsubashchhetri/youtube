@@ -1,4 +1,4 @@
-<html>
+{{!-- <html>
 <title>
   </title>
   <head>
@@ -23,11 +23,86 @@
     <p>Created Date: {{this.createdDate}}</p>
   </div>
 {{/each}}
-
-
-
     </body>
+</html> --}}
+{{!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Video Details Page</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<body>
 
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </nav>
+	<!-- Video player -->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/{{VIDEO_ID}}"
+	title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+	clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	allowfullscreen></iframe>
 
+	<!-- Video details -->
+	<h1>{{VIDEO_TITLE}}</h1>
+	<p>Channel: {{VIDEO_CHANNEL}}</p>
+	<p>Upload date: {{VIDEO_UPLOAD_DATE}}</p>
+	<p>Number of likes: {{VIDEO_LIKES}}</p>
 
+	<!-- Form for adding a comment -->
+	<form action="/video/{{VIDEO_ID}}/comment" method="POST">
+		<label for="comment">Add a comment:</label><br>
+		<textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<!-- List of comments -->
+	<h2>Comments:</h2>
+	<ul>
+		{{#each COMMENTS}}
+		<li>{{this}}</li>
+		{{/each}}
+	</ul>
+
+	<!-- Form for adding a like -->
+	<form action="/video/{{VIDEO_ID}}/like" method="POST">
+		<input type="submit" value="Like">
+	</form>
+
+</body>
+</html> --}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </nav>
+    <h1>Welcome to our video sharing platform</h1>
+    <form action="/" method="GET">
+      <input type="text" name="search" placeholder="Search for a video...">
+      <button type="submit">Search</button>
+    </form>
+   <div class="videos">
+  <ul>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/ryljIay9gP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/MArLl3XbN8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/LnQI6W5NYAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/RQuPtJISJYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/usSZdwl5Fvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/PhF2W0fkgu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+  </ul>
+</div>
+
+  </body>
 </html>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
     <nav>
@@ -12,28 +13,20 @@
       </ul>
     </nav>
     <h1>Welcome to our video sharing platform</h1>
-    
-   <!-- Search bar -->
-<form action="/" method="GET">
-  <input type="text" name="search" placeholder="Search...">
-  <button type="submit">Search</button>
-</form>
-<h1>Home Page</h1>
-<form method="GET">
-  <input type="text" name="search" placeholder="Search videos...">
-  <button type="submit">Search</button>
-</form>
-<hr>
-{{!-- {{#each videos}}
-<div>
-  <a href="/video/{{videoId}}">
-    <img src="{{img}}" alt="{{title}}">
-    <h2>{{title}}</h2>
-  </a>
-  <p>Channel: {{channel}}</p>
-  <p>Upload Date: {{createdDate}}</p>
+    <form action="/" method="GET">
+      <input type="text" name="search" placeholder="Search for a video...">
+      <button type="submit">Search</button>
+    </form>
+   <div class="videos">
+  <ul>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/ryljIay9gP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/MArLl3XbN8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/LnQI6W5NYAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/RQuPtJISJYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/usSZdwl5Fvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/PhF2W0fkgu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+  </ul>
 </div>
-{{/each}} --}}
 
   </body>
 </html>

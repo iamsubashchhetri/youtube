@@ -1,24 +1,18 @@
 const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
-  videoId: {
-    type: Number,
-  
-    
-    required: true
-  },
   username: {
     type: String,
-    required: true,
-    trim:true,
+    required: true
   },
   text: {
     type: String,
-    required: true,
-    trim:true,
+    required: true
+  },
+  videoId: {
+    type: String,
+    required: true
   }
-}, {
-  timestamps: true
 });
 
 const Comment = mongoose.model('Comment', commentSchema);
